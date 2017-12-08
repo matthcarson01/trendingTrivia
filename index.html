@@ -13,7 +13,8 @@
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
-    <button><span>+</span> Add Question</button>
+    <button>
+      <span>+</span> Add Question</button>
   </header>
   <article>
     <nav>
@@ -26,18 +27,20 @@
     <div class="search">
       <input type="text" placeholder="Animal to search by">
     </div>
-    <div ng-repeat="question in questions" class="questionCard">
-      <h1>{{question.question}}</h1>
-      <div class="questionFlexWrapper">
-      
-        <img src="./styles/assets/gear.svg" alt="gear">
-        <span style="background:green" ng-show="question.difficulty === 1">Easy</span>
-        <span style="background:yellow"ng-show="question.difficulty === 2">Medium</span>
-        <span style="background:red" ng-show="question.difficulty === 3">Hard</span>
+    <div ng-repeat="question in questions">
+      <div class="questionCard" ng-style='newColor'>
+        <h1>{{question.question}}</h1>
+        <div class="questionFlexWrapper">
+
+          <img src="./styles/assets/gear.svg" alt="gear">
+          <span style="background:green" ng-show="question.difficulty === 1">Easy</span>
+          <span style="background:yellow" ng-show="question.difficulty === 2">Medium</span>
+          <span style="background:red" ng-show="question.difficulty === 3">Hard</span>
+        </div>
+        <h1 ng-show='isCorrect'>Correct!</h1>
+        <ul class="questionOptions">
+          <li ng-repeat="(key,val) in question.options" ng-click="correctAnswer(key, question.correct_answer)">{{ val }}</li>
       </div>
-      <ul class="questionOptions">
-        <li ng-repeat="(key,val) in question.options">{{ val }}</li>
-      </ul>
     </div>
     <!-- Questions go here -->
 
@@ -46,8 +49,10 @@
   <div class="modal">
     <form>
       <h4 class="close">X</h4>
-      <span>Question</span><input type="text" ng-model="<!-- Question -->">
-      <span>Animal it's about</span><input type="text" ng-model="<!-- Animal -->">
+      <span>Question</span>
+      <input type="text" ng-model="<!-- Question -->">
+      <span>Animal it' s about</span>
+      <input type="text" ng-model="<!-- Animal -->">
       <span>Difficulty</span>
       <div class="range">
         <input type="range" min="1" max="3" ng-model="<!-- Difficulty -->">
