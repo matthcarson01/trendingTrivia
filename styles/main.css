@@ -228,3 +228,28 @@ input[type="range"] {
 .red {
   background: rgb(218, 45, 123);
 }
+.questionCard{
+  background: white;
+  width:90%;
+  height: 10rem;
+  margin: 20px auto;
+  padding:15px;
+  display:flex;
+  flex-flow: rowwrap;
+
+}
+.questionCard h1{
+  font-weight: bold;
+  /* margin-top:20px; */
+}
+.questionCard img {
+  width:50px;
+  height: auto;
+}
+.questionOptions{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width:100%;
+}

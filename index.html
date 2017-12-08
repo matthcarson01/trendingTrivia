@@ -26,8 +26,13 @@
     <div class="search">
       <input type="text" placeholder="Animal to search by">
     </div>
-
-   {{test}}
+    <div ng-repeat="question in questions" class="questionCard">
+      <h1>{{question.question}}</h1>
+      <img src="./styles/assets/gear.svg" alt="gear icon">
+      <ul class="questionOptions">
+        <li ng-repeat="(key,val) in question.options">{{ val }}</li>
+      </ul>
+    </div>
     <!-- Questions go here -->
 
   </article>
