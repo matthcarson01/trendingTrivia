@@ -2,14 +2,14 @@
 
   <h3>{{question.question}}</h3>
   <div ng-class=“{green: difficulty==‘ Easy’, yellow: difficulty==‘ Medium’, red: difficulty==‘ Hard’}“>{{difficulty}}</div>
-  <div class=“gear” ng-click=“modalOpen=t rue”>
+  <div class=“gear” ng-click=“modalOpen=true”>
     <img src=“/styles/assets/gear.svg” alt=“”>
   </div>
   <ul>
-    <li ng-repeat=“(key, value) in question.options” ng-class=“{green: key==$ parent.chosen_answer && key==$ parent.question.correct_answer,
-      red: key==c hosen_answer && key !=q uestion.correct_answer}“>
+    <li ng-repeat="(key, value) in question.options" ng-class=“{green: key==$parent.chosen_answer && key==$parent.question.correct_answer,
+      red: key="chosen_answer && key !=question.correct_answer}">
       <!-- Repeated for each option -->
-      <input id=“{{$parent.question._id}}{{value}}” type=“radio” name=“chosen_answer{{$parent.question._id}}” ng-model=“$parent.chosen_answer”
+      <input id="{{$parent.question._id}}{{value}}" type="radio" name=“chosen_answer{{$parent.question._id}}” ng-model=“$parent.chosen_answer”
         ng-value=“key”>
       <label for=“{{$parent.question._id}}{{value}}“>{{value}}</label>
     </li>
