@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="/styles/assets/crownFavicon.png">
 </head>
 
-<body>
+<body ng-controller="questionsCtrl">
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
@@ -27,6 +27,7 @@
       <input type="text" placeholder="Animal to search by">
     </div>
 
+   {{test}}
     <!-- Questions go here -->
 
   </article>
@@ -81,7 +82,9 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" charset="utf-8"></script>
-  <script src="./app.js" charset="utf-8"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script> -->
+  <script src="./js/app.js" charset="utf-8"></script>
+  <script src="./js/questionsCtrl.js"></script>
 </body>
 
 </html>
