@@ -13,7 +13,7 @@ angular.module("app").controller("questionsCtrl",function($scope, $http){
             1: '',
             2: '',
             3: '',
-            4: ''
+            4: '',
         },
         question: ""
     };
