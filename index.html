@@ -26,18 +26,20 @@
     <div class="search">
       <input type="text" placeholder="Animal to search by">
     </div>
-    <div ng-repeat="question in questions" class="questionCard">
-      <h1>{{question.question}}</h1>
-      <div class="questionFlexWrapper">
-      
-        <img src="./styles/assets/gear.svg" alt="gear" ng-click="showEditModal()">
-        <span style="background:green" ng-show="question.difficulty === 1">Easy</span>
-        <span style="background:yellow"ng-show="question.difficulty === 2">Medium</span>
-        <span style="background:red" ng-show="question.difficulty === 3">Hard</span>
+    <div ng-repeat="question in questions">
+      <div class="questionCard" ng-style='newColor'>
+        <h1>{{question.question}}</h1>
+        <div class="questionFlexWrapper">
+
+          <img src="./styles/assets/gear.svg" ng-click="showEditModal(question)" alt="gear">
+          <span style="background:green" ng-show="question.difficulty === 1">Easy</span>
+          <span style="background:yellow" ng-show="question.difficulty === 2">Medium</span>
+          <span style="background:red" ng-show="question.difficulty === 3">Hard</span>
+        </div>
+        <h1 ng-show='isCorrect'>Correct!</h1>
+        <ul class="questionOptions">
+          <li ng-repeat="(key,val) in question.options" ng-click="correctAnswer(key, question.correct_answer)">{{ val }}</li>
       </div>
-      <ul class="questionOptions">
-        <li ng-repeat="(key,val) in question.options">{{ val }}</li>
-      </ul>
     </div>
     <!-- Questions go here -->
 
@@ -80,8 +82,8 @@
 
       <!--Edit & Delete question buttons-->
       <div class="buttons" ng-show="editQuestion">
-        <button class="red" ng-click="deleteEdit()">Delete Question</button>
-        <button class="green" ng-click="saveEdit()">Save Changes</button>
+        <button class="red" ng-click="deleteEdit(editId)">Delete Question</button>
+        <button class="green" ng-click="saveEdit(editId, newQuestion)">Save Changes</button>
         <button ng-click="cancelEdit()">Cancel</button>
       </div>
 
