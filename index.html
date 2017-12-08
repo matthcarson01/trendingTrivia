@@ -28,7 +28,7 @@
       <input type="text" placeholder="Animal to search by">
     </div>
     <div ng-repeat="question in questions">
-      <div class="questionCard" ng-style='newColor'>
+      <div class="questionCard" ng-style=' answerId === question._id && newColor'>
         <h1>{{question.question}}</h1>
         <div class="questionFlexWrapper">
 
@@ -39,7 +39,7 @@
         </div>
         <h1 ng-show='isCorrect'>Correct!</h1>
         <ul class="questionOptions">
-          <li ng-repeat="(key,val) in question.options" ng-click="correctAnswer(key, question.correct_answer)">{{ val }}</li>
+          <li ng-repeat="(key,val) in question.options" ng-click="correctAnswer(key, question.correct_answer, question._id)">{{ val }}</li>
       </div>
     </div>
     <!-- Questions go here -->
