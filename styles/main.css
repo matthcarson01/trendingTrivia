@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-*, h1, a, body {
-  font-family: 'Montserrat', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+*,
+h1,
+a,
+body {
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 body {
@@ -26,7 +29,7 @@ header h1 {
 header button {
   background: rgb(1, 206, 241);
   border: none;
-  padding: .75rem;
+  padding: 0.75rem;
   font-size: 1.15rem;
   border-radius: 1px;
   cursor: pointer;
@@ -41,11 +44,11 @@ header button span {
   font-size: 2em;
   padding: 0;
   margin: 0;
-  margin-right: .45rem;
-  line-height: .75;
+  margin-right: 0.45rem;
+  line-height: 0.75;
 }
 header button:hover {
-  opacity: .85;
+  opacity: 0.85;
 }
 nav {
   width: 100%;
@@ -56,7 +59,7 @@ nav {
   margin-bottom: 12px;
 }
 nav a {
-  padding: .5rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,11 +68,11 @@ nav a {
   cursor: pointer;
   flex: 1;
 }
-nav a:nth-child(1n+1) {
-  border-left: .25px solid #eee;
+nav a:nth-child(1n + 1) {
+  border-left: 0.25px solid #eee;
 }
 nav a:hover {
-  opacity: .85;
+  opacity: 0.85;
 }
 article {
   width: 50%;
@@ -106,13 +109,13 @@ article {
 div.gear {
   height: 1.5rem;
   padding: 0;
-  margin-right: .25rem;
+  margin-right: 0.25rem;
   cursor: pointer;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 div.gear:hover {
   transform: rotate(90deg);
-  opacity: .85;
+  opacity: 0.85;
 }
 .gear img {
   height: 100%;
@@ -128,19 +131,22 @@ ul li {
   margin-bottom: 1rem;
   margin-right: 1rem;
   text-align: justify;
-  padding: .5em;
+  padding: 0.5em;
 }
 label {
-  padding: .5rem;
+  padding: 0.5rem;
   line-height: 1.15rem;
 }
 li input {
   float: left;
 }
-ul li label:hover, input:hover + label {
-  opacity: .65;
+ul li label:hover,
+input:hover + label {
+  opacity: 0.65;
 }
-label, input[type="radio"], input[type="range"] {
+label,
+input[type="radio"],
+input[type="range"] {
   cursor: pointer;
 }
 
@@ -176,12 +182,12 @@ label, input[type="radio"], input[type="range"] {
   cursor: pointer;
 }
 .modal form input {
-  margin: .5rem 0;
-  padding: .5em;
+  margin: 0.5rem 0;
+  padding: 0.5em;
   border: none;
 }
-.modal input[type="radio"] + input[type=text] {
-  width: calc(100% - 1.35em)
+.modal input[type="radio"] + input[type="text"] {
+  width: calc(100% - 1.35em);
 }
 input[type="range"] {
   max-width: 200px;
@@ -194,7 +200,7 @@ input[type="range"] {
   margin-top: 1rem;
 }
 .modal form button {
-  padding: .5rem;
+  padding: 0.5rem;
   border: none;
   cursor: pointer;
 }
@@ -202,9 +208,9 @@ input[type="range"] {
   padding: 0 22px;
   margin-bottom: 12px;
 }
-.search input{
+.search input {
   border: none;
-  padding: .5em;
+  padding: 0.5em;
   width: 100%;
 }
 .change-page {
@@ -228,38 +234,39 @@ input[type="range"] {
 .red {
   background: rgb(218, 45, 123);
 }
-.questionCard{
+.questionCard {
   background: white;
-  width:90%;
+  width: 90%;
   height: 10rem;
   margin: 20px auto;
-  padding:15px;
-  display:flex;
+  padding: 15px;
+  display: flex;
   flex-flow: row wrap;
-  justify-content: space-between
-
+  justify-content: space-between;
 }
-.questionCard h1{
+.questionCard h1 {
   font-weight: bold;
   /* margin-top:20px; */
 }
 .questionCard img {
-  width:30px;
+  width: 30px;
   /* height: auto; */
 }
-.questionOptions{
-  display:flex;
+.questionOptions {
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  width:100%;
+  width: 100%;
 }
-.questionFlexWrapper{
+.questionFlexWrapper {
   display: flex;
   flex-flow: row nowrap;
-  height:10%;
-  width:10%;
+  height: 10%;
+  width: 10%;
   justify-content: flex-end;
   align-items: center;
 }
-
+.backgroundchange {
+  background-color: green;
+}
