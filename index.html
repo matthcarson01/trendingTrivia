@@ -13,7 +13,7 @@
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
-    <button><span>+</span> Add Question</button>
+    <button ng-click="newQuestion.showModal()"><span>+</span> Add Question</button>
   </header>
   <article>
     <nav>
@@ -37,46 +37,46 @@
 
   </article>
 
-  <div class="modal" ng-show="{{modalAddOrEdit}}">
+  <div class="modal" ng-show="modalAddOrEdit">
     <form>
-      <h4 class="close">X</h4>
-      <span>Question</span><input type="text" ng-model="{{newQuestion.question}}">
-      <span>Animal it's about</span><input type="text" ng-model="{{newQuestion.animal}}">
+      <h4 class="close" ng-click="newQuestion.cancelSave()">X</h4>
+      <span>Question</span><input type="text" ng-model="newQuestion.question">
+      <span>Animal it's about</span><input type="text" ng-model="newQuestion.animal">
       <span>Difficulty</span>
       <div class="range">
-        <input type="range" min="1" max="3" ng-model="{{newQuestion.difficulty}}">
+        <input type="range" min="1" max="3" ng-model="newQuestion.difficulty">
 
         <h5>{{newQuestion.difficulty}}</h5>
       </div>
       <h4>Options</h4>
       <div>
-        <input type="radio" ng-model="{{newQuestion.correct_answer}}" value="1">
-        <input type="text" ng-model="{{newQuestion.options.1}}">
+        <input type="radio" ng-model="newQuestion.correct_answer" value="1">
+        <input type="text" ng-model="newQuestion.option1">
       </div>
       <div>
-        <input type="radio" ng-model="{{newQuestion.answer}}" value="2">
-        <input type="text" ng-model="{{newQuestion.options.2}}">
+        <input type="radio" ng-model="newQuestion.correct_answer" value="2">
+        <input type="text" ng-model="newQuestion.option2">
       </div>
       <div>
-        <input type="radio" ng-model="{{newQuestion.answer}}" value="3">
-        <input type="text" ng-model="{{newQuestion.options.3}}">
+        <input type="radio" ng-model="newQuestion.correct_answer" value="3">
+        <input type="text" ng-model="newQuestion.option3">
       </div>
       <div>
-        <input type="radio" ng-model="{{newQuestion.answer}}" value="4">
-        <input type="text" ng-model="{{newQuestion.options.4}}">
+        <input type="radio" ng-model="newQuestion.correct_answer" value="4">
+        <input type="text" ng-model="newQuestion.option4">
       </div>
 
       <!--Add question buttons-->
-      <div class="buttons">
-        <button class="green" ng-click="{{newQuestion.saveNew()}}">Save Question</button>
-        <button ng-click="{{newQuestion.cancelSave()}}">Cancel</button>
+      <div class="buttons" ng-show="!editQuestion">
+        <button class="green" ng-click="newQuestion.saveNew()">Save Question</button>
+        <button ng-click="newQuestion.cancelSave()">Cancel</button>
       </div>
 
       <!--Edit & Delete question buttons-->
-      <div class="buttons">
-        <button class="red" ng-click="{{editQuestion.deleteEdit()}}">Delete Question</button>
-        <button class="green" ng-click="{{editQuestion.saveEdit()}}">Save Changes</button>
-        <button ng-click="{{editQuestion.cancelEdit()}}">Cancel</button>
+      <div class="buttons" ng-show="editQuestion">
+        <button class="red" ng-click="editQuestion.deleteEdit()">Delete Question</button>
+        <button class="green" ng-click="editQuestion.saveEdit()">Save Changes</button>
+        <button ng-click="editQuestion.cancelEdit()">Cancel</button>
       </div>
 
     </form>
